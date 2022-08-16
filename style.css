@@ -37,6 +37,7 @@ body {
     align-items: center;
     margin-bottom: 34px;
     margin-right: min(34px);
+    margin-left: min(34px);
 }
 .cards-section > * img {
     width: 100px;
@@ -59,5 +60,11 @@ body {
     }
     .cards-section > * {
         margin-right: 0;
+        width: 45%;
+        height: auto;
+        padding: 15% 0;
     }
+    .cards-section > * img {
+        width: 80%;
+        height: auto;
 }
