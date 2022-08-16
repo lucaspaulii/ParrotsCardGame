@@ -7,5 +7,12 @@ function cardNumChecked() {
     return insertNum;
 }
 const cardNum = cardNumChecked();
-console.log(cardNum)
 
+// shows the user the number of cards he asked for
+function showCards() {
+    for (let i=1; i<=cardNum ; i++) {
+        let card = document.querySelector(`.card${i}`);
+        card.classList.remove('hidden')
+    }
+}
+showCards()

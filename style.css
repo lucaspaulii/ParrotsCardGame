@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #EEF9BF;
+    font-family: 'Roboto', sans-serif;
+}
+.content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    font-size: 56px;
+    color: #75B79E;
+    font-weight: 700;
+    margin: 40px auto;
+    text-align: center;
+}
+.cards-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.cards-section > * {
+    background-color: #99CEA8;
+    width: 117px;
+    height: 146px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 34px;
+    margin-right: min(34px);
+}
+.cards-section > * img {
+    width: 100px;
+    height: auto;
+}
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 629px) {
+    h1 {
+        font-size: 36px;
+        width: 70%;
+        margin: 0 auto;
+    }   
+    .cards-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cards-section > * {
+        margin-right: 0;
+    }
+}
