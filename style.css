@@ -46,6 +46,34 @@ body {
 .hidden {
     display: none;
 }
+.parrot1, .parrot2, .parrot3, .parrot4, .parrot5, .parrot6, .parrot7 {   
+    width: 100px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+}
+.parrot1 {
+    background-image: url('./source/bobrossparrot.gif');
+}
+.parrot2 {
+    background-image: url('./source/explodyparrot.gif');
+}
+.parrot3 {
+    background-image: url('./source/fiestaparrot.gif');
+}
+.parrot4 {
+    background-image: url('./source/metalparrot.gif');
+}
+.parrot5 {
+    background-image: url('./source/revertitparrot.gif');
+}
+.parrot6 {
+    background-image: url('./source/tripletsparrot.gif');
+}
+.parrot7 {
+    background-image: url('./source/unicornparrot.gif');
+}
 
 @media screen and (max-width: 629px) {
     h1 {
@@ -59,8 +87,9 @@ body {
     .cards-section > * {
         margin-right: 0;
         width: 45%;
+        max-width: 117px;
         height: auto;
-        padding: 15% 0;
+        padding: 5% 0;
         margin-left: auto;
         margin-right: auto;
     }

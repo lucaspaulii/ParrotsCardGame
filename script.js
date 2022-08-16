@@ -16,3 +16,39 @@ function showCards() {
     }
 }
 showCards()
+
+/* test of changing card
+function changeCard(element) {
+    element.classList.add('parrot1');
+    element.innerHTML = '';
+}*/
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+
+function sortCards() {
+    let cards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+    while (cards.length > cardNum) {
+        cards.pop()
+    }
+    shuffle(cards);
+    return cards;
+}
+cardsOrder = sortCards()
+
+
