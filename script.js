@@ -45,14 +45,12 @@ function sortCards() {
 };
 cardsOrder = sortCards();
 
-//apply the cards to its position
+const parrots = ['<img src="./source/bobrossparrot.gif" alt="bobross parrot" />', '<img src="./source/explodyparrot.gif" alt="exploydy parrot" />', '<img src="./source/fiestaparrot.gif" alt="filesta parrot" />', '<img src="./source/metalparrot.gif" alt="metal parrot" />', '<img src="./source/revertitparrot.gif" alt="revertit parrot" />', '<img src="./source/tripletsparrot.gif" alt="triplets parrot" />', '<img src="./source/unicornparrot.gif" alt="unicorn parrot" />']
+
 function changeCard(element) {
     let cardIndex = element.className
     cardIndex = Number(cardIndex.replaceAll('card', ''));
-    element.classList.add(`parrot${cardsOrder[(cardIndex-1)]}`);
-    element.innerHTML = '';
-    setTimeout(function() {
-        element.classList.remove(`parrot${cardsOrder[(cardIndex-1)]}`);
-        element.innerHTML = '<img src="./source/front.png" alt="green parrot">';
-    }, 3000);
-};
+    let currentCard = cardsOrder[cardIndex-1];
+    element.innerHTML = parrots[currentCard-1];
+    element.classList.add('selected')
+}

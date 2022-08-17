@@ -53,26 +53,8 @@ body {
     background-position: center;
     height: auto;
 }
-.parrot1 {
-    background-image: url('./source/bobrossparrot.gif');
-}
-.parrot2 {
-    background-image: url('./source/explodyparrot.gif');
-}
-.parrot3 {
-    background-image: url('./source/fiestaparrot.gif');
-}
-.parrot4 {
-    background-image: url('./source/metalparrot.gif');
-}
-.parrot5 {
-    background-image: url('./source/revertitparrot.gif');
-}
-.parrot6 {
-    background-image: url('./source/tripletsparrot.gif');
-}
-.parrot7 {
-    background-image: url('./source/unicornparrot.gif');
+.selected {
+    transform: rotateY('180deg');
 }
 
 @media screen and (max-width: 629px) {
@@ -96,4 +78,5 @@ body {
     .cards-section > * img {
         width: 80%;
         height: auto;
+    }
 }
