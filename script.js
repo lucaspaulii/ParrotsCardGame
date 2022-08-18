@@ -1,8 +1,8 @@
 // checks if Card number can be used and reassign the cardNum variable
 function cardNumChecked() {
     let insertNum = prompt('Com quantas cartas você quer jogar?');
-    while (((insertNum%2) !== 0) || (insertNum > 14) || (insertNum < 2 || insertNum === null)) {
-        insertNum = prompt('O número deve ser par e estar entre 2 e 14!');
+    while (((insertNum%2) !== 0) || (insertNum > 14) || (insertNum < 4 || insertNum === null)) {
+        insertNum = prompt('O número deve ser par e estar entre 4 e 14!');
     };
     return insertNum;
 }
@@ -93,6 +93,12 @@ function checkClicked() {
 function youWon() {
     if (winningCount === cardNum) {
         alert(`You won in ${playsCount} plays!`);
+        let playAgain = confirm("Let's play again!\r\n Click OK to confirm or Cancel to close the page");
+        if (playAgain) {
+            document.location.reload(true);
+        } else {
+            close();
+        }
     };
 };
 
