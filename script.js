@@ -90,10 +90,18 @@ function checkClicked() {
     };
 };
 
+let timerVar = 0;
 function youWon() {
     if (winningCount === cardNum) {
-        alert(`You won in ${playsCount} plays!`);
-        let playAgain = confirm("Let's play again!\r\n Click OK to confirm or Cancel to close the page");
+        clearInterval(timerVar)
+        const finalMinutes = document.querySelector('#minutes').innerHTML
+        const finalSeconds = document.querySelector('#seconds').innerHTML
+        if (finalMinutes === '00') {
+            alert(`CONGRATULATIONS!\r\nYou won in ${playsCount} plays and ${finalSeconds} seconds! `);
+        } else {
+            alert(`CONGRATULATIONS!\r\nYou won in ${playsCount} plays, ${finalMinutes} minutes and ${finalSeconds} seconds! `);  
+        }
+        let playAgain = confirm("Let's play again!\r\nClick OK to confirm or Cancel to close the page");
         if (playAgain) {
             document.location.reload(true);
         } else {
@@ -102,4 +110,28 @@ function youWon() {
     };
 };
 
+function timer() {
+    let sec1 = 0;
+    let sec2 = 0;
+    let min1 = 0;
+    let min2 = 0;
+    const timerHTML = document.querySelector('.timer')
+    timerVar = setInterval( function() {
+        timerHTML.innerHTML = (`<span id="minutes">${min1}${min2}</span>:<span id="seconds">${sec1}${sec2}</span>`);
+        sec2 ++
+        if (sec2 === 10) {
+            sec1 = sec1 + 1;
+            sec2 = 0;
+        }
+        if (sec1 === 6) {
+            min2 = min2 + 1;
+            sec1 = 0;
+        }
+        if (min2 === 10){
+            min1 = min1 + 1;
+            min2 = 0;
+        }
+    }, 1000);
+}
+timer()
 
