@@ -109,6 +109,87 @@ body {
     align-items: center;
   }
 
+  .initial-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #355045;
+    color: #ffffff;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.7s;
+  }
+  .initial-page img {
+    width: 200px;
+  }
+  .initial-page h1 {
+    font-size: 80px;
+    font-weight: 800;
+    margin:30px 0;
+  }
+  .initial-page p {
+    font-size: 25px;
+    font-weight: 100;
+    margin: 15px 0;
+  }
+  .invisible {
+    visibility: hidden;
+    transition-duration: 0.7s;
+  }
+  .you-won {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 30%;
+    height: 500px;
+    z-index: 300;
+    background-color: #355045;
+    box-shadow: 0px 0px 11px 4px rgba(0,0,0,0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+  }
+  .you-won h1 {
+    font-size: 80px;
+    font-weight: 800;
+    margin:20px 0;
+  }
+  .you-won p {
+    width: 80%;
+    font-weight: 100;
+    text-align: center;
+  }
+  .parrots {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  .parrots img {
+    width: 35px;
+  }
+  .buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .buttons button {
+    width: 100px;
+    height: 35px;
+    background-color: #A7E9AF;
+    border-color:#75B79E;
+  }
+
 @media screen and (max-width: 629px) {
     h1 {
         font-size: 36px;
@@ -132,5 +213,38 @@ body {
         height: 45px;
         font-size: 25px;
         position: fixed;
+    }
+    .initial-page img {
+      width: 100px;
+    }
+    .initial-page h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .initial-page p {
+      font-size: 14px;
+      font-weight: 100;
+      margin: 15px 0;
+    }
+    .you-won {
+      width: 80%;
+    }
+    .you-won h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .you-won p {
+      width: 80%;
+      text-align: center;
+    }
+    .buttons {
+      width: 80%;
+    }
+    .parrots img {
+      width: 25px;
     }
 }

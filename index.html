@@ -14,6 +14,14 @@
         <div class="header">
         <h1>PARROT CARD GAME</h1>
         </div>
+        <div class="initial-page">
+          <img src="./source/front.png" alt="green parrot">
+          <h1>PARROT CARD GAME</h1>
+          <p>How many cards you wanna play with?</p>
+          <input type="range" min="4" max="14" step="2">
+          <p class="input-value"></p>
+          <button onclick="selectCardNum()">SELECT</button>
+        </div>
         <div class="timer">
             00:00
         </div>
@@ -144,6 +152,32 @@
                   </div>
                 </div>
             </div>
+        </div>
+        <div class="you-won invisible">
+          <div class="parrots">
+            <img src="./source/bobrossparrot.gif" alt="bobrossparrot">
+            <img src="./source/explodyparrot.gif" alt="explodyparrot">
+            <img src="./source/fiestaparrot.gif" alt="fiestaparrot">
+            <img src="./source/metalparrot.gif" alt="metalparrot">
+            <img src="./source/revertitparrot.gif" alt="revertitparrot">
+            <img src="./source/tripletsparrot.gif" alt="tripletsparrot">
+            <img src="./source/unicornparrot.gif" alt="unicornparrot">
+          </div>
+          <h1>YOU WON!</h1>
+          <p></p>
+          <div class="buttons">
+            <button onclick="playAgain()">PLAY AGAIN</button>
+            <button onclick="exitGame()">EXIT</button>
+          </div>
+          <div class="parrots">
+            <img src="./source/bobrossparrot.gif" alt="bobrossparrot">
+            <img src="./source/explodyparrot.gif" alt="explodyparrot">
+            <img src="./source/fiestaparrot.gif" alt="fiestaparrot">
+            <img src="./source/metalparrot.gif" alt="metalparrot">
+            <img src="./source/revertitparrot.gif" alt="revertitparrot">
+            <img src="./source/tripletsparrot.gif" alt="tripletsparrot">
+            <img src="./source/unicornparrot.gif" alt="unicornparrot">
+          </div>
         </div>
     </div>
     

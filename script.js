@@ -1,21 +1,37 @@
 // checks if Card number can be used and reassign the cardNum variable
+let insertNum = 0;
+let insertInterval = 0;
+let definitiveNum = 0;
+let cardsOrder
+
 function cardNumChecked() {
-    let insertNum = prompt('How many cards you wanna play with?');
-    while (((insertNum%2) !== 0) || (insertNum > 14) || (insertNum < 4 || insertNum === null)) {
-        insertNum = prompt('The number of cards must be even and between 4 and 14!');
-    };
-    return insertNum;
+    insertInterval = setInterval(function(){
+        insertNum = document.querySelector('input').value;
+        document.querySelector('.input-value').innerHTML = insertNum;
+    }, 200);
 };
-const cardNum = Number(cardNumChecked());
+
+cardNumChecked();
+
+function selectCardNum() {
+    clearInterval(insertInterval);
+    const initialPage = document.querySelector(".initial-page");
+    initialPage.classList.add('invisible');
+    timer();
+    showCards();
+    cardsOrder = sortCards();
+}
+let cardNum;
 
 // shows the user the number of cards he asked for
 function showCards() {
+    cardNum = Number(insertNum);
+    console.log(cardNum)
     for (let i=0; i<cardNum ; i++) {
         let card = document.getElementById(i);
         card.classList.remove('hidden');
     };
 };
-showCards();
 
 
 //support function to sort array in a random way
@@ -42,7 +58,6 @@ function sortCards() {
     shuffle(cards);
     return cards;
 };
-cardsOrder = sortCards();
 
 
 const parrots = ['<img src="./source/bobrossparrot.gif" alt="bobross parrot" />', '<img src="./source/explodyparrot.gif" alt="exploydy parrot" />', '<img src="./source/fiestaparrot.gif" alt="filesta parrot" />', '<img src="./source/metalparrot.gif" alt="metal parrot" />', '<img src="./source/revertitparrot.gif" alt="revertit parrot" />', '<img src="./source/tripletsparrot.gif" alt="triplets parrot" />', '<img src="./source/unicornparrot.gif" alt="unicorn parrot" />'];
@@ -101,18 +116,19 @@ let timerVar = 0;
 function youWon() {
     if (winningCount === cardNum) {
         clearInterval(timerVar);
+        const youWonSection = document.querySelector('.you-won');
+        setTimeout( function() {
+            youWonSection.classList.remove('invisible');
+        }, 500
+        )
+        
+        const youWonMessage = document.querySelector('.you-won p');
         const finalMinutes = document.querySelector('#minutes').innerHTML;
         const finalSeconds = document.querySelector('#seconds').innerHTML;
         if (finalMinutes === '00') {
-            alert(`CONGRATULATIONS!\r\nYou won in ${playsCount} plays and ${finalSeconds} seconds! `);
+            youWonMessage.innerHTML = (`Congratulations! You won in ${playsCount} plays and ${finalSeconds} seconds!`);
         } else {
-            alert(`CONGRATULATIONS!\r\nYou won in ${playsCount} plays, ${finalMinutes} minutes and ${finalSeconds} seconds! `);  
-        }
-        let playAgain = confirm("Let's play again!\r\nClick OK to confirm or Cancel to close the page");
-        if (playAgain) {
-            document.location.reload(true);
-        } else {
-            close();
+            youWonMessage.innerHTML = (`Congratulations! You won in ${playsCount} plays, ${finalMinutes} minutes and ${finalSeconds} seconds!`);  
         }
     };
 };
@@ -141,5 +157,13 @@ function timer() {
         };
     }, 1000);
 }
-timer();
+
+//play again button
+function playAgain() {
+    document.location.reload(true);
+}
+function exitGame() {
+    window.close();
+}
+
 
