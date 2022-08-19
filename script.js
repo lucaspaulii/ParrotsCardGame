@@ -82,6 +82,8 @@ function checkClicked() {
             winningCount = winningCount + 2;
             clickedCounter[0].classList.add('matched');
             clickedCounter[1].classList.add('matched');
+            clickedCounter[0].removeAttribute('onclick');
+            clickedCounter[1].removeAttribute('onclick');
             setTimeout( function() {youWon()}, 600);
         } else if (element1img !== element2img) {
             setTimeout( function() {
