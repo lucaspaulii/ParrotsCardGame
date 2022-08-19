@@ -163,7 +163,8 @@ function playAgain() {
     document.location.reload(true);
 }
 function exitGame() {
-    window.close();
+    const youWonSection = document.querySelector('.you-won');
+    youWonSection.classList.add('invisible');
 }
 
 
