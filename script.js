@@ -63,8 +63,7 @@ function changeCard(element) {
         element.classList.add('clicked'); 
         // add an suport class to check the clicked ones without messing with the matched cards!
         element.classList.add('suportClass');  
-        // add plays count
-        playsCount = playsCount + 1; 
+        // add plays count 
     }
     checkClicked();
 };
@@ -78,6 +77,7 @@ function checkClicked() {
         const element2img = clickedCounter[1].querySelector('.flip-card-back img').getAttribute("src");
         clickedCounter[0].classList.remove('suportClass');
         clickedCounter[1].classList.remove('suportClass');
+        playsCount = playsCount + 2;
         if (element1img === element2img) {
             winningCount = winningCount + 2;
             clickedCounter[0].classList.add('matched');
