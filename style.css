@@ -25,7 +25,8 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
+    margin: 7 auto 0;
 }
 .cards-section > * {
     width: 117px;
@@ -78,7 +79,7 @@ body {
   
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    background-color: #99CEA8;
+    background-color: #A7E9AF;
     color: black;
   }
   
